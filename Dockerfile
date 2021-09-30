@@ -1,10 +1,11 @@
-FROM gitpod-io/openvscode-server
+FROM gitpod/openvscode-server
 
 # Configure sudo
 RUN apt-get update \ 
     && apt-get install -y sudo \
     && adduser vscode-server sudo \
     && sed -i.bkp -e 's/%sudo\s\+ALL=(ALL\(:ALL\)\?)\s\+ALL/%sudo ALL=NOPASSWD:ALL/g' /etc/sudoers
+
 
 RUN apt update
 RUN apt install -y git wget
