@@ -13,8 +13,8 @@ RUN wget https://github.com/gitpod-io/openvscode-server/releases/download/${RELE
 RUN tar -xzf ${RELEASE_TAG}-linux-x64.tar.gz
 
 # Creating the user and usergroup
-RUN adduser im-coder-lg && \
-    usermod -a -G vscode-server im-coder-lg
+RUN adduser vscode-server && \
+    usermod -a -G vscode-server vscode-server
 
 RUN chmod g+rw /home && \
     mkdir -p /home/vscode && \
