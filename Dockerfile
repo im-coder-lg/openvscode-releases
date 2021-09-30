@@ -1,5 +1,6 @@
 FROM gitpod/openvscode-server
 
+USER root
 # Configure sudo
 RUN apt-get update \ 
     && apt-get install -y sudo \
